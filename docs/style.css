@@ -13,12 +13,14 @@ body {
     align-items: center;
     gap: 20px;
 }
+
 /* Stil för rubrik */
 h1 {
     color: #0078d7; /* Azure blå */
     font-size: 3rem;
     margin-bottom: 20px;
 }
+
 /* Stil för knapp */
 button {
     background-color: #0078d7;
@@ -27,10 +29,12 @@ button {
     padding: 8px 12px; 
     border-radius: 6px;
 }
+
 /* Hover-effekt på knapp */
 button:hover {
     background-color: #005a9e;
 }
+
 /* Stil för inputfält */
 input {
     font-size: 18px;

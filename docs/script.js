@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(data => {
                 if (data.status === 200) {
-                    alert(name + " har registrerats! 🎉");// Bekräftelse
+                    alert(name + " har registrerats! 🎉"); // Bekräftelse
                 } else  {
                     alert("Det gick inte att registrera namnet.")
                 }
-                document.getElementById("user-input").value = "";// Töm fältet
+                document.getElementById("user-input").value = ""; // Töm fältet
             })
             .catch(error => {
                 console.error("Fel vid anropet:", error);
