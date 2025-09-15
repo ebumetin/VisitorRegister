@@ -15,20 +15,22 @@ public class RegistrationTrigger
     {
         _logger = logger;
     }
-
+    // Azure Function som triggas av POST-request
     [Function("RegistrationTrigger")]
     public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "post")] HttpRequest req)
     {
+        // Läs namnet från request body
         var name = await new StreamReader(req.Body).ReadToEndAsync();
         _logger.LogInformation("New visitor registration request: {Name}", name);
 
         try
-        {
+        {   // Skapa Cosmos DB klient
             var client =
                 new CosmosClient(
                     Environment.GetEnvironmentVariable("CosmosConnectionString"));
             var container = client.GetContainer("visitor-register-db", "visitors");
-        
+            
+            // Skapa nytt objekt i databasen
             await container.CreateItemAsync(new
             {
                 id = Guid.NewGuid().ToString(),
