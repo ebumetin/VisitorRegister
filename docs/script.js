@@ -1,3 +1,4 @@
+// När sidan har laddats
 document.addEventListener("DOMContentLoaded", () => {
 
     const button = document.getElementById("reg-button");
@@ -5,11 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     button.addEventListener("click",  () => {
         console.log("clicked!");
+
+        // Hämta namnet från inputfältet
         const name = document.getElementById("user-input").value;
 
+        // Kontrollera att fältet inte är tomt
         if (name === "") {
             alert("Namnet får inte vara tomt");
         } else {
+            // Skicka POST-request till Azure Function
             fetch(functionUrl, {
                 method: "POST",
                 headers: {
@@ -19,11 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(data => {
                 if (data.status === 200) {
-                    alert(name + " har registrerats! 🎉");
+                    alert(name + " har registrerats! 🎉");// Bekräftelse
                 } else  {
                     alert("Det gick inte att registrera namnet.")
                 }
-                document.getElementById("user-input").value = "";
+                document.getElementById("user-input").value = "";// Töm fältet
             })
             .catch(error => {
                 console.error("Fel vid anropet:", error);

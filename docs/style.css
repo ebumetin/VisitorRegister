@@ -1,22 +1,25 @@
+/* Grundinställningar för sidan */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #f4f6f8;/* Ljus bakgrund */
     color: #333;
     text-align: center;
     padding-top: 100px;
+
+    /* Centrera innehållet */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
-
+/* Stil för rubrik */
 h1 {
-    color: #0078d7; /* Azure blue */
+    color: #0078d7; /* Azure blå */
     font-size: 3rem;
     margin-bottom: 20px;
 }
-
+/* Stil för knapp */
 button {
     background-color: #0078d7;
     color: white;
@@ -24,11 +27,11 @@ button {
     padding: 8px 12px; 
     border-radius: 6px;
 }
-
+/* Hover-effekt på knapp */
 button:hover {
     background-color: #005a9e;
 }
-
+/* Stil för inputfält */
 input {
     font-size: 18px;
 }
